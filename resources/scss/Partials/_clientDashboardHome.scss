@@ -1,0 +1,231 @@
+//TODO:move the dashboard main section to main app.scss
+.dashboard-main-section {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    overflow: hidden;
+}
+
+.navigation-section {
+    height: 100%;
+    background-color: #4B4B4B;
+
+    .logo-section {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F67171;
+
+        img {
+            height: 70px;
+        }
+    }
+
+    & > p {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center;
+        font-style: italic;
+        color: white;
+        background-color: #EC5656;
+    }
+
+    .navigation-button-section {
+        h3 {
+            font-size: 1.23em;
+            color: white;
+            padding: 10px 0px 10px 10px;
+        }
+
+        .link-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                width: 100%;
+                display: inline-grid;
+                grid-template-columns: 50px 1fr;
+                margin-bottom: 5px;
+
+                img, p {
+                    height: 35px;
+                    padding: 3px;
+                }
+
+                p {
+                    font-size: 1.2em;
+                    text-align: left;
+                    padding-left: 8px;
+                    line-height: 30px;
+                    color: white;
+                }
+            }
+
+            .active-panel {
+                background-color: #E56262;
+            }
+        }
+    }
+}
+
+.body-section {
+    height: 100%;
+    overflow: auto;
+
+    .top-banner {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+        height: 60px;
+        background-color: #4B4B4B;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h6 {
+            width: 200px;
+            margin-left: 10px;
+            font-size: 1.4em;
+            font-weight: bolder;
+            color: white;
+        }
+
+        form {
+            width: 500px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+
+            input {
+                width: 300px;
+                border-radius: 20px;
+                display: inline;
+            }
+
+            button {
+                padding: 5px 10px;
+                background-color: #F67171;
+                color: white;
+                border-radius: 5px;
+                display: inline;
+            }
+        }
+
+        .icons-section {
+            width: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-right: 10px;
+
+            a {
+                border-radius: 5px;
+                height: 40px;
+                width: 40px;
+
+                img {
+                    width: 50px;
+                    padding: 5px;
+                }
+
+                &:hover {
+                    background-color: #F67171;
+                }
+            }
+        }
+    }
+
+    .content-body {
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+
+        .panel-heading{
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 0 6px grey;
+            display: grid;
+            grid-template-columns: repeat(12 , 1fr);
+            .btn-sect{
+                grid-column: span 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .btn-sect:nth-of-type(2){
+                grid-column: 11/13;
+            }
+            button{
+                padding: 5px 10px;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            }
+        }
+
+        .User-form {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            &>div{
+                height: 100%;
+                border-radius: 8px;
+                box-shadow: 0 0 6px grey;
+                overflow: hidden;
+                padding-bottom: 20px;
+                background-color: white;
+            }
+
+            .section-1 {
+                width: calc(70% - 10px);
+
+
+
+                h4 {
+                    font-weight: bold;
+                    color: white;
+                    padding: 11px;
+                    background-color: red;
+                    font-size: 1.2em;
+                }
+            }
+
+            .section-2 {
+                width: calc(30% - 10px);
+
+
+                h4 {
+                    font-weight: bold;
+                    color: white;
+                    padding: 11px;
+                    background-color: red;
+                    font-size: 1.2em;
+                }
+            }
+
+            .field-area {
+                width: 90%;
+                margin: auto;
+                padding-top: 20px;
+                .form-group{
+                    margin-bottom: 10px;
+                }
+
+                label {
+                    width: 100%;
+                    color: grey;
+                }
+
+                input {
+                    border-radius: 5px;
+                    border: 1px solid grey;
+                }
+            }
+        }
+    }
+}

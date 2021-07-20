@@ -1,0 +1,289 @@
+$Company_red:rgb(240, 60, 60);
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::placeholder {
+    font-style: italic;
+    color: rgb(153, 153, 153);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: red;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: red;
+}
+
+// over writing boot strap pagination
+.pagination>li>a {
+    background-color: white;
+    color: $Company_red;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination>.active>a {
+    color: white;
+    background-color: $Company_red !important;
+    border: solid 1px $Company_red !important;
+}
+
+.pagination>.active>a:hover {
+    background-color: lighten($Company_red, 10%) !important;
+    border: solid 1px lighten($Company_red, 10%);
+}
+
+.pagination_panel {
+    width: 100%;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+// user card holder
+div {
+    &>& .user_card_holder {
+        width: 200px;
+        height: 300px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgb(221, 221, 221);
+        padding-top: 10px;
+        .image_holder {
+            width: 90px;
+            height: 90px;
+            background-color: red;
+            margin: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 5px;
+            & img {
+                height: 90px;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        & p:nth-child(2) {
+            text-align: center;
+            font-size: large;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 6px;
+        }
+        & p:nth-child(3) {
+            text-align: center;
+            font-size: medium;
+            color: rgb(153, 153, 153);
+        }
+        & .ratings_section {
+            width: 100px;
+            margin: auto;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            & img {
+                height: 25px;
+            }
+            & p {
+                margin: 0;
+                padding: 0;
+                font-size: small;
+                color: rgb(146, 146, 146);
+            }
+        }
+        & p:nth-child(5) {
+            text-align: center;
+        }
+        & .view_button {
+            width: 100px;
+            margin: auto;
+            height: 30px;
+            background-color: red;
+            border-radius: 5px;
+            overflow: hidden;
+            & a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: $Company_red;
+                text-align: center;
+                text-decoration: none;
+                line-height: 30px;
+                color: white;
+            }
+        }
+    }
+}
+
+//project card holder
+.project_card_holder {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: 0 0 6px grey;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .check_box {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 10px;
+        input {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+    }
+    .image_area {
+        width: 350px;
+        height: 149px;
+        img {
+            max-width: 250px;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .project_details_area {
+        min-width: 600px;
+        height: 100%;
+        .card_heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 35px;
+            h6 {
+                font-size: 130%;
+                padding-left: 10px;
+                color: grey;
+            }
+            p {
+                padding: 0;
+                display: block;
+                margin: 0;
+                height: 100%;
+                font-weight: 600;
+                color: rgb(90, 90, 90);
+            }
+        }
+        .description {
+            margin: auto;
+            width: 96%;
+            height: 70px;
+            margin-bottom: 5px;
+            p {
+                padding: 0;
+                margin: 0;
+                font-size: 90%;
+                padding-bottom: 5;
+            }
+        }
+        .card_control {
+            width: 96%;
+            height: 65px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .card_desq {
+                width: 200px;
+                flex-direction: row;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                .sect {
+                    display: flex;
+                    flex-direction: row;
+                    p {
+                        display: inline-block;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    &>p:first-child {
+                        width: 50px;
+                    }
+                }
+            }
+            .card_actions {
+                width: 200px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                a {
+                    width: 50px;
+                    height: 35px;
+                    background-color: red;
+                    display: block;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        height: 30px;
+                    }
+                    &:nth-child(1) {
+                        background-color: aqua;
+                    }
+                    &:nth-child(2) {
+                        background-color: orange;
+                    }
+                    &:nth-child(3) {
+                        background-color: rgb(238, 49, 49);
+                    }
+                    &:hover {
+                        box-shadow: 0px 0px 6px rgb(107, 107, 107);
+                    }
+                }
+            }
+        }
+    }
+}
