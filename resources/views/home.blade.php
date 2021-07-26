@@ -43,9 +43,15 @@
         </ul>
     </div>
     <div class="user_action">
+        @if( Auth::user() == null)
         <div class="button_holder">
             <a href="/register" >Register</a>
         </div>
+        @else
+        <div class="button_holder">
+            <a href="/logout" >Log out</a>
+        </div>
+        @endif
     </div>
 </nav>
 
