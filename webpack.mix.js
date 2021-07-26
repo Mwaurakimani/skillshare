@@ -12,7 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+<<<<<<< HEAD
     .js('resources/js/App/user', 'public/js/App/user.js')
+=======
+>>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
     .js('resources/js/res/live.js', 'public/js/res/live.js')
     .sass('resources/scss/app.scss', 'public/css/Assets/app.css')
     .postCss('resources/css/app.css', 'public/css', [
