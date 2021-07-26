@@ -166,6 +166,12 @@
                 color: white;
                 border-radius: 5px;
             }
+            a{
+                padding: 5px 10px;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            }
         }
 
         .User-form {
@@ -180,11 +186,13 @@
                 padding-bottom: 20px;
                 background-color: white;
             }
+            select{
+                width: 100%;
+                border-radius: 5px ;
+            }
 
             .section-1 {
                 width: calc(70% - 10px);
-
-
 
                 h4 {
                     font-weight: bold;
@@ -193,6 +201,7 @@
                     background-color: red;
                     font-size: 1.2em;
                 }
+
             }
 
             .section-2 {

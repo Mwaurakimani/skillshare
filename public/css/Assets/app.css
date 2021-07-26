@@ -161,23 +161,17 @@ div > div .user_card_holder .view_button a {
 
 .project_card_holder {
   width: 100%;
-  height: 200px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50px 200px 1fr;
   box-shadow: 0 0 6px grey;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 100ms linear;
+  transform: scale(1);
 }
 .project_card_holder .check_box {
-  width: 100px;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10px;
+  grid-column: 1/2;
+  justify-self: center;
 }
 .project_card_holder .check_box input {
   width: 15px;
@@ -185,95 +179,84 @@ div > div .user_card_holder .view_button a {
   border-radius: 3px;
 }
 .project_card_holder .image_area {
-  width: 350px;
-  height: 149px;
+  height: 100%;
+  grid-column: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 .project_card_holder .image_area img {
-  max-width: 250px;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 90%;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project_card_holder .project_details_area {
-  min-width: 600px;
-  height: 100%;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
 }
 .project_card_holder .project_details_area .card_heading {
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 35px;
 }
 .project_card_holder .project_details_area .card_heading h6 {
-  font-size: 130%;
-  padding-left: 10px;
+  font-size: 1.3em;
+  margin-left: 10px;
   color: grey;
 }
 .project_card_holder .project_details_area .card_heading p {
-  padding: 0;
-  display: block;
-  margin: 0;
-  height: 100%;
-  font-weight: 600;
-  color: #5a5a5a;
+  font-style: italic;
+  margin-right: 10px;
 }
 .project_card_holder .project_details_area .description {
-  margin: auto;
-  width: 96%;
-  height: 70px;
-  margin-bottom: 5px;
+  padding: 0px 15px 0px 15px;
 }
 .project_card_holder .project_details_area .description p {
+  font-size: 0.9em;
   padding: 0;
   margin: 0;
-  font-size: 90%;
-  padding-bottom: 5;
+  margin: auto;
+  border-bottom: 1px #808080 solid;
+  padding: 5px 0px 30px 0px;
 }
 .project_card_holder .project_details_area .card_control {
-  width: 96%;
-  height: 65px;
-  margin: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .project_card_holder .project_details_area .card_control .card_desq {
-  width: 200px;
-  flex-direction: row;
+  margin-left: 15px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
 }
 .project_card_holder .project_details_area .card_control .card_desq .sect {
   display: flex;
-  flex-direction: row;
-}
-.project_card_holder .project_details_area .card_control .card_desq .sect p {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
 }
 .project_card_holder .project_details_area .card_control .card_desq .sect > p:first-child {
   width: 50px;
 }
 .project_card_holder .project_details_area .card_control .card_actions {
-  width: 200px;
-  height: 60px;
+  width: 300px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 .project_card_holder .project_details_area .card_control .card_actions a {
-  width: 50px;
-  height: 35px;
-  background-color: red;
-  display: block;
-  border-radius: 5px;
+  height: 30px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 15px;
+  border-radius: 5px;
 }
 .project_card_holder .project_details_area .card_control .card_actions a img {
   height: 30px;
@@ -289,6 +272,82 @@ div > div .user_card_holder .view_button a {
 }
 .project_card_holder .project_details_area .card_control .card_actions a:hover {
   box-shadow: 0px 0px 6px #6b6b6b;
+}
+.project_card_holder:hover {
+  transition: all 100ms linear;
+  transform: scale(1.018);
+}
+
+.card_display_panel {
+  display: flex !important;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card_display_panel .contractorCard {
+  width: 200px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 6px grey;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card_display_panel .contractorCard .image-sect {
+  padding-top: 5px;
+  width: 100%;
+  height: 110px;
+}
+.card_display_panel .contractorCard .image-sect img {
+  width: 100px;
+  display: block;
+  background-color: pink;
+  margin: auto;
+  border-radius: 50%;
+}
+.card_display_panel .contractorCard .h6 {
+  text-align: center;
+  margin: 0;
+}
+.card_display_panel .contractorCard p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+.card_display_panel .contractorCard .rating {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.card_display_panel .contractorCard .rating img {
+  height: 25px;
+  margin-right: 5px;
+}
+.card_display_panel .contractorCard .location {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.card_display_panel .contractorCard .location img {
+  height: 25px;
+  margin-right: 5px;
+}
+.card_display_panel .contractorCard a {
+  width: 60px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-weight: 500;
+  display: block;
+  margin: auto;
 }
 
 nav {
@@ -593,6 +652,7 @@ body > h3 {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 10px;
 }
 
 .dashboard-main-section {
@@ -743,6 +803,12 @@ body > h3 {
   color: white;
   border-radius: 5px;
 }
+.body-section .content-body .panel-heading a {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
 .body-section .content-body .User-form {
   width: 100%;
   display: flex;
@@ -755,6 +821,10 @@ body > h3 {
   overflow: hidden;
   padding-bottom: 20px;
   background-color: white;
+}
+.body-section .content-body .User-form select {
+  width: 100%;
+  border-radius: 5px;
 }
 .body-section .content-body .User-form .section-1 {
   width: calc(70% - 10px);

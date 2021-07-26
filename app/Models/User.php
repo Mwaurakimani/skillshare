@@ -40,4 +40,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setVisibilityAttribute($value)
+    {
+        if ($value == 'true') {
+            $this->attributes['visibility'] = true;
+        } else {
+            $this->attributes['visibility'] = false;
+        }
+
+    }
+
+    public function Skill()
+    {
+        return $this->belongsToMany(Skill::class)
+            ->as('setSkill');
+    }
 }

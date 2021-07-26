@@ -1,4 +1,10 @@
+//configuration
 @import "config/config";
+
+//components
+@import "components/projectCard";
+@import "components/contractorCard";
+
 @import "Partials/index";
 @import "Partials/clientDashboardHome";
 
