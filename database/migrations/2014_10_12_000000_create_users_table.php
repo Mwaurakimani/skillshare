@@ -18,11 +18,16 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('password');
             $table->string('paymentMethode')->nullable();
             $table->boolean('visibility')->default(true);
             $table->string('status')->default('active');
             $table->string('role')->default('client');
+=======
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+>>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
 =======
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
