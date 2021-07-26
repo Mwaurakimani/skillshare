@@ -108,14 +108,6 @@
                 <input type="text" placeholder="Type to search...">
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="project_card_panel card_display_panel">
-            <?php
-            for ($i=0; $i < 20; $i++) {
-                $hello = 'hello';
-            ?>
-            <x-contractorCard></x-contractorCard>
-=======
         <div class="project_card_panel">
             <?php
             for ($i=0; $i < 20; $i++) {
@@ -154,7 +146,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
             <?php
             }
             ?>
