@@ -65,6 +65,10 @@
                                 <option value="Inactive" {{ Auth::User()->status == 'Inactive' ? 'selected="selected"' : "" }} >Inactive</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <input type="text" name="accountType" value="{{ Auth::User()->role ? Auth::User()->role : "N/A"  }}" disabled>
+                        </div>
                     </div>
                 </div>
             </form>

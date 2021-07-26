@@ -16,14 +16,19 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('complexity');
-            $table->integer('period');
-            $table->decimal('price',12,2);
-            $table->integer('rating');
-            $table->text('Description');
-            $table->bigInteger('user_id');
-            $table->string('image');
+            $table->string('complexity')->default('Easy');
+            $table->integer('period')->nullable();
+            $table->decimal('price',12,2)->default(0);
+            $table->integer('rating')->nullable();
+            $table->text('Description')->nullable();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('image')->default('default_project_image.png');
             $table->boolean('complete')->default(false);
+            $table->timestamps();
         });
     }
 
