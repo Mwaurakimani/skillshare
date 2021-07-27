@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Relations\Pivot as PivotAlias;
 
-class SkillUser extends Pivot
+class ProSkill extends PivotAlias
 {
     use HasFactory;
 
     public $incrementing = true;
 
-    protected $table = 'skill_user';
+    protected $table = 'project_skill';
 }

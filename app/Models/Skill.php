@@ -14,4 +14,10 @@ class Skill extends Model
         return $this->belongsToMany(User::class)
             ->as('setSkill');
     }
+
+    public function Project()
+    {
+        return $this->belongsToMany(Project::class)
+            ->as('projectSkillLink');
+    }
 }

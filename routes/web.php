@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\userController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,31 @@ Route::get('/project', function (){
 Route::get('/contractor', function (){
     return view('App.client.Contractor');
 });
+
+
+
+//dashboard
+Route::get('/account' , function (){
+
+    return view('App.client.home');
+})->middleware(['auth'])->name('dashboard_account');
+
+
+Route::get('/project' , function (){
+    $projects = Project::all();
+
+    return view('App.client.Project')->with([
+        'projects'=>$projects
+    ]);
+})->middleware(['auth'])->name('dashboard_project');
+
+Route::get('/project/{id}' , function ($id){
+    $projects = Project::find($id);
+
+    return view('App.client.ProjectView')->with([
+        'project'=>$projects
+    ]);
+})->middleware(['auth'])->name('dashboard_project_view');
 
 require __DIR__.'/auth.php';
 
