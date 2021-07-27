@@ -1,14 +1,34 @@
 //configuration
 @import "config/config";
 
+
+
+
 //components
-@import "components/projectCard";
-@import "components/contractorCard";
 
+//dashboard
+@import "components/Dashboard/navigationSection";
+@import "components/Dashboard/panelBar";
+
+//cards
+@import "components/Cards/projectCard";
+@import "components/Cards/contractorCard";
+
+
+
+
+//Partials
+
+//homepage
 @import "Partials/index";
-@import "Partials/clientDashboardHome";
 
-.dashboard-main-section{
+//dashboard
+@import "Partials/Dashboard";
+@import "Partials/DashboardHome";
+@import "Partials/DashboardAccount";
+@import "Partials/DashboardProject";
+
+.dashboard-main-section {
     width: 100vw;
     height: 100vh;
 }

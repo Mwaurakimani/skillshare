@@ -1,3 +1,15 @@
+
+@php
+
+$btns = [
+    ['dashboard','storage/menu.png'],
+    ['account','storage/account.png'],
+    ['project','storage/icons8-project-60.png'],
+    ['contractor','storage/workers.png']
+];
+
+@endphp
+
 <div class="navigation-section">
     <div class="logo-section">
         <img src=" {{asset( 'storage/logo.png' )}} " alt="">
@@ -6,21 +18,12 @@
     <div class="navigation-button-section">
         <h3>Navigation</h3>
         <div class="link-section">
-            <a href="/dashboard" class="active-panel">
-                <img src=" {{ asset( 'storage/menu.png') }} " alt="">
-                <p>Dashboard</p>
-            </a>
-            <a href="/account">
-                <img src=" {{ asset('storage/account.png')  }} " alt="">
-                <p>Account</p>
-            </a> <a href="/project">
-                <img src=" {{ asset( 'storage/icons8-project-60.png') }} " alt="">
-                <p>Projects</p>
-            </a>
-            <a href="/contractors">
-                <img src=" {{ asset('storage/workers.png')  }} " alt="">
-                <p>Contractors</p>
-            </a>
+
+            @foreach($btns as $btn)
+                <x-side-bar-btn :name="$btn">
+
+                </x-side-bar-btn>
+            @endforeach
         </div>
     </div>
 </div>

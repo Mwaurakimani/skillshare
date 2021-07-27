@@ -1,15 +1,16 @@
 @extends('dashboard')
 
+@php
+    $title = "Account";
+@endphp
+
 @section('content')
     <div class="body-section">
-        <x-top-bar></x-top-bar>
+        <x-top-bar :title="$title"></x-top-bar>
         <div class="content-body">
             <div class="panel-heading">
-                <div class="btn-sect">
+                <div class="btn-Update-Account">
                     <button type="submit" form="User_form">Update</button>
-                </div>
-                <div class="btn-sect">
-                    <button id="btn_delete_user">Delete</button>
                 </div>
             </div>
             @if(Session::has('message'))

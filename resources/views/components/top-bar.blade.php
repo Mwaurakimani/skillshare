@@ -1,5 +1,5 @@
 <div class="top-banner">
-    <h6>Dashboard</h6>
+    <h6>{{ $title }}</h6>
     <form action="">
         <div class="form-group">
             <input type="search" class="form-control">
@@ -15,3 +15,4 @@
         </a>
     </div>
 </div>
+

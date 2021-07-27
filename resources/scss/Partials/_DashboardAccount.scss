@@ -1,0 +1,76 @@
+.panel-heading {
+    &>div {
+        grid-column: span 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.User-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    & > div {
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 0 6px grey;
+        overflow: hidden;
+        padding-bottom: 20px;
+        background-color: white;
+    }
+
+    select {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .section-1 {
+        width: calc(70% - 10px);
+
+        h4 {
+            font-weight: bold;
+            color: white;
+            padding: 11px;
+            background-color: red;
+            font-size: 1.2em;
+        }
+
+    }
+
+    .section-2 {
+        width: calc(30% - 10px);
+
+
+        h4 {
+            font-weight: bold;
+            color: white;
+            padding: 11px;
+            background-color: red;
+            font-size: 1.2em;
+        }
+    }
+
+    .field-area {
+        width: 90%;
+        margin: auto;
+        padding-top: 20px;
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            width: 100%;
+            color: grey;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+    }
+}
+
+

@@ -1,0 +1,76 @@
+.dashboard-main-section {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    overflow: hidden;
+    & .body-section {
+        height: 100%;
+        overflow: auto;
+        & .top-banner {
+            position: sticky;
+            top: 0px;
+            width: 100%;
+            height: 60px;
+            background-color: #4B4B4B;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            //TODO:confirm where the is coming from
+            h6 {
+                width: 200px;
+                margin-left: 10px;
+                font-size: 1.4em;
+                font-weight: bolder;
+                color: white;
+            }
+            form {
+                width: 500px;
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                input {
+                    width: 300px;
+                    border-radius: 20px;
+                    display: inline;
+                }
+
+                button {
+                    padding: 5px 10px;
+                    background-color: #F67171;
+                    color: white;
+                    border-radius: 5px;
+                    display: inline;
+                }
+            }
+            .icons-section {
+                width: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin-right: 10px;
+
+                a {
+                    border-radius: 5px;
+                    height: 40px;
+                    width: 40px;
+
+                    img {
+                        width: 50px;
+                        padding: 5px;
+                    }
+
+                    &:hover {
+                        background-color: #F67171;
+                    }
+                }
+            }
+        }
+        & .content-body {
+            width: 100%;
+            padding: 10px 10px 10px 10px;
+        }
+    }
+}
+

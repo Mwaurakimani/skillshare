@@ -1,0 +1,64 @@
+.navigation-section {
+    height: 100%;
+    background-color: #4B4B4B;
+
+    .logo-section {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F67171;
+
+        img {
+            height: 70px;
+        }
+    }
+
+    & > p {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center;
+        font-style: italic;
+        color: white;
+        background-color: #EC5656;
+    }
+
+    .navigation-button-section {
+        h3 {
+            font-size: 1.23em;
+            color: white;
+            padding: 10px 0px 10px 10px;
+        }
+
+        .link-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                width: 100%;
+                display: inline-grid;
+                grid-template-columns: 50px 1fr;
+                margin-bottom: 5px;
+
+                img, p {
+                    height: 35px;
+                    padding: 3px;
+                }
+
+                p {
+                    font-size: 1.2em;
+                    text-align: left;
+                    padding-left: 8px;
+                    line-height: 30px;
+                    color: white;
+                }
+            }
+
+            .active-panel {
+                background-color: #E56262;
+            }
+        }
+    }
+}

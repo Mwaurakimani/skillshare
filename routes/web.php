@@ -24,6 +24,17 @@ Route::get('/dashboard', function () {
 
 Route::resource('/User', userController::class);
 
+Route::get('/account', function (){
+    return view('App.client.Account');
+});
+
+Route::get('/project', function (){
+    return view('App.client.Project');
+});
+
+Route::get('/contractor', function (){
+    return view('App.client.Contractor');
+});
 
 require __DIR__.'/auth.php';
 
