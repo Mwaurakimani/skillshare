@@ -82,12 +82,15 @@ class userController extends Controller
         $user->paymentMethode = $request->paymentMethode;
         $user->visibility = $request->visibility;
         $user->status = $request->status;
+        $user->location = $request->location;
+        $user->Bio = $request->Bio;
 
         $user->save();
 
+
         $request->session()->flash('message', 'User Was Updated Successfully');
 
-        return redirect('/dashboard');
+        return redirect('/account');
     }
 
     /**

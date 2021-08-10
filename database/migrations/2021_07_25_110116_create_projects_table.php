@@ -26,7 +26,7 @@ class CreateProjectsTable extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('image')->default('default_project_image.png');
+            $table->string('image')->nullable();
             $table->boolean('complete')->default(false);
             $table->timestamps();
         });

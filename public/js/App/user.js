@@ -4288,9 +4288,7 @@ if (alert.length > 0) {
   setTimeout(function () {
     alert.fadeOut();
   }, 2000);
-} else {
-  console.log("not here");
-}
+} else {}
 })();
 
 /******/ })()

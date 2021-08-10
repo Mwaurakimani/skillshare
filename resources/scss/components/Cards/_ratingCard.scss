@@ -1,0 +1,38 @@
+.rating-card{
+    width: 96%;
+    padding-bottom: 5px;
+    box-shadow: 0 0 6px grey;
+    margin: auto auto 20px;
+    border-radius: 5px;
+    h4{
+        color: #454545;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+    .rating-options{
+        height: 30px;
+        width: 300px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .input-group{
+            width: 40px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+    }
+    button{
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+}

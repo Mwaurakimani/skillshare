@@ -2,13 +2,13 @@
 
 
 @php
-    $title = "Contractors";
+    $title = "Dashboard";
 @endphp
 
 
 @section('content')
     <div class="body-section">
-        <x-top-bar :title="$title"></x-top-bar>
+        <x-Layout.top-bar :title="$title"></x-Layout.top-bar>
     </div>
     <script src=" {{ asset("js/App/user.js") }} "></script>
 @endsection

@@ -13,6 +13,9 @@
         <a href="">
             <img src=" {{ asset("storage/icons8-sms-60.png") }} " alt="">
         </a>
+        <a href="/user/logout">
+            <img src=" {{ asset("storage/logout.png") }} " alt="">
+        </a>
     </div>
 </div>
 

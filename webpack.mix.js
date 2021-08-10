@@ -11,8 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.browserSync('127.0.0.1:8000')
+    .js('resources/js/app.js', 'public/js')
     .js('resources/js/App/user', 'public/js/App/user.js')
+    .js('resources/js/App/contractorCard.js', 'public/js/App/contractorCard.js')
+    .js('resources/js/App/projects.js', 'public/js/App/projects.js')
     .js('resources/js/res/live.js', 'public/js/res/live.js')
     .sass('resources/scss/app.scss', 'public/css/Assets/app.css')
     .postCss('resources/css/app.css', 'public/css', [

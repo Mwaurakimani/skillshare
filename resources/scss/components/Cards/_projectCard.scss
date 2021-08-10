@@ -8,13 +8,15 @@
     margin-bottom: 10px;
     transition: all 100ms linear;
     transform: scale(1);
+    background-color: white;
     .check_box {
         grid-column: 1/2;
         justify-self: center;
+        padding-top: 30px;
         input {
 
-            width: 15px;
-            height: 15px;
+            width: 30px;
+            height: 30px;
             border-radius: 3px;
         }
     }
@@ -111,6 +113,16 @@
                     &:hover {
                         box-shadow: 0px 0px 6px rgb(107, 107, 107);
                     }
+                }
+                button{
+                    background-color: red;
+                    display: block;
+                    width: 60px;
+                    height: 30px;
+                }
+
+                .Hire_User,.Fire_User{
+                    color: white;
                 }
             }
         }

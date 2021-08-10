@@ -13,6 +13,7 @@
 //cards
 @import "components/Cards/projectCard";
 @import "components/Cards/contractorCard";
+@import "components/Cards/ratingCard";
 
 
 
@@ -27,6 +28,7 @@
 @import "Partials/DashboardHome";
 @import "Partials/DashboardAccount";
 @import "Partials/DashboardProject";
+@import "Partials/DashboardContractors";
 
 .dashboard-main-section {
     width: 100vw;

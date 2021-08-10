@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/App/user.js": "/js/App/user.js",
+    "/js/App/contractorCard.js": "/js/App/contractorCard.js",
+    "/js/App/projects.js": "/js/App/projects.js",
     "/js/res/live.js": "/js/res/live.js",
     "/css/app.css": "/css/app.css",
     "/css/Assets/app.css": "/css/Assets/app.css"

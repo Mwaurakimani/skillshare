@@ -170,6 +170,7 @@ div > div .user_card_holder .view_button a {
   align-items: center;
   justify-content: center;
   background-color: #F67171;
+  cursor: pointer;
 }
 .navigation-section .logo-section img {
   height: 70px;
@@ -244,14 +245,16 @@ div > div .user_card_holder .view_button a {
   margin-bottom: 10px;
   transition: all 100ms linear;
   transform: scale(1);
+  background-color: white;
 }
 .project_card_holder .check_box {
   grid-column: 1/2;
   justify-self: center;
+  padding-top: 30px;
 }
 .project_card_holder .check_box input {
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   border-radius: 3px;
 }
 .project_card_holder .image_area {
@@ -349,17 +352,21 @@ div > div .user_card_holder .view_button a {
 .project_card_holder .project_details_area .card_control .card_actions a:hover {
   box-shadow: 0px 0px 6px #6b6b6b;
 }
+.project_card_holder .project_details_area .card_control .card_actions button {
+  background-color: red;
+  display: block;
+  width: 60px;
+  height: 30px;
+}
+.project_card_holder .project_details_area .card_control .card_actions .Hire_User, .project_card_holder .project_details_area .card_control .card_actions .Fire_User {
+  color: white;
+}
 .project_card_holder:hover {
   transition: all 100ms linear;
   transform: scale(1.018);
 }
 
-.card_display_panel {
-  display: flex !important;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.card_display_panel .contractorCard {
+.contractorCard {
   width: 200px;
   margin-bottom: 20px;
   box-shadow: 0 0 6px grey;
@@ -367,29 +374,29 @@ div > div .user_card_holder .view_button a {
   border-radius: 5px;
   overflow: hidden;
 }
-.card_display_panel .contractorCard .image-sect {
+.contractorCard .image-sect {
   padding-top: 5px;
   width: 100%;
   height: 110px;
 }
-.card_display_panel .contractorCard .image-sect img {
+.contractorCard .image-sect img {
   width: 100px;
   display: block;
   background-color: pink;
   margin: auto;
   border-radius: 50%;
 }
-.card_display_panel .contractorCard .h6 {
+.contractorCard .h6 {
   text-align: center;
   margin: 0;
 }
-.card_display_panel .contractorCard p {
+.contractorCard p {
   text-align: center;
   margin: 0;
   padding: 0;
   font-size: 0.9em;
 }
-.card_display_panel .contractorCard .rating {
+.contractorCard .rating {
   width: 100%;
   height: 40px;
   display: flex;
@@ -397,11 +404,11 @@ div > div .user_card_holder .view_button a {
   justify-content: center;
   margin-bottom: 10px;
 }
-.card_display_panel .contractorCard .rating img {
+.contractorCard .rating img {
   height: 25px;
   margin-right: 5px;
 }
-.card_display_panel .contractorCard .location {
+.contractorCard .location {
   width: 100%;
   height: 40px;
   display: flex;
@@ -409,11 +416,11 @@ div > div .user_card_holder .view_button a {
   justify-content: center;
   margin-bottom: 10px;
 }
-.card_display_panel .contractorCard .location img {
+.contractorCard .location img {
   height: 25px;
   margin-right: 5px;
 }
-.card_display_panel .contractorCard a {
+.contractorCard a {
   width: 60px;
   height: 35px;
   line-height: 35px;
@@ -424,6 +431,44 @@ div > div .user_card_holder .view_button a {
   font-weight: 500;
   display: block;
   margin: auto;
+}
+
+.rating-card {
+  width: 96%;
+  padding-bottom: 5px;
+  box-shadow: 0 0 6px grey;
+  margin: auto auto 20px;
+  border-radius: 5px;
+}
+.rating-card h4 {
+  color: #454545;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.rating-card .rating-options {
+  height: 30px;
+  width: 300px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.rating-card .rating-options .input-group {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.rating-card button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  display: inline-block;
 }
 
 nav {
@@ -643,6 +688,7 @@ body > h3 {
 }
 .content_body .filter_section .filter_panel h5 {
   color: red;
+  padding-bottom: 10px;
 }
 .content_body .filter_section .filter_panel select {
   padding-left: 10px;
@@ -730,6 +776,108 @@ body > h3 {
   flex-wrap: wrap;
   padding: 10px;
 }
+.content_body .items_section .No-data-found {
+  width: 80%;
+  height: 200px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 4px #646464;
+  text-align: center;
+  line-height: 200px;
+  font-size: 2em;
+  color: #696969;
+}
+.content_body .project-view {
+  width: 80%;
+}
+.content_body .project-view h5 {
+  font-weight: 500;
+  text-decoration: underline;
+  color: #3b3b3b;
+  margin-bottom: 5px;
+  font-size: 1.3em;
+}
+.content_body .project-view .image-viewer {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px grey;
+  margin: auto auto 10px;
+  border-radius: 5px;
+}
+.content_body .project-view .image-viewer img {
+  width: 80%;
+}
+.content_body .project-view .content-viewer {
+  width: 100%;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #858585;
+  margin-bottom: 20px;
+}
+.content_body .project-view .content-viewer ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.content_body .project-view .content-viewer ul li {
+  display: flex;
+  margin-bottom: 3px;
+}
+.content_body .project-view .content-viewer ul li .heading {
+  width: 120px;
+  font-weight: 600;
+  color: #4f4f4f;
+}
+.content_body .project-view .content-viewer ul li .content {
+  width: calc(100% - 150px);
+  font-style: italic;
+  padding-left: 10px;
+  font-weight: 400;
+}
+.content_body .project-view .content-viewer > p {
+  color: #515151;
+  font-family: sans-serif;
+}
+.content_body .project-view .skill-set-view {
+  width: 100%;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 0 5px #858585;
+  margin-bottom: 20px;
+}
+.content_body .project-view .skill-set-view .skill-set-panel {
+  width: 100%;
+}
+.content_body .project-view .skill-set-view .skill-set-panel p {
+  display: inline-block;
+  padding: 1px 15px;
+  background-color: #ee4343;
+  border-radius: 15px;
+  color: white;
+}
+.content_body .project-view .call-to-action {
+  width: 100%;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 0 5px #858585;
+  margin-bottom: 20px;
+}
+.content_body .project-view .call-to-action button {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+.content_body .project-view .call-to-action p {
+  color: red;
+}
+
+.card_display_panel {
+  display: flex !important;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
 .dashboard-main-section {
   width: 100vw;
@@ -778,7 +926,7 @@ body > h3 {
   display: inline;
 }
 .dashboard-main-section .body-section .top-banner .icons-section {
-  width: 90px;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -835,6 +983,10 @@ body > h3 {
   background-color: red;
   font-size: 1.2em;
 }
+.User-form .section-1 textarea {
+  width: 100%;
+  border-radius: 5px;
+}
 .User-form .section-2 {
   width: calc(30% - 10px);
 }
@@ -862,8 +1014,248 @@ body > h3 {
   border: 1px solid grey;
 }
 
+.contractor_skill_holder {
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: red;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px grey;
+}
+
 .content-body .project-set-as-complete-btn {
   grid-column: 11/13;
+}
+.content-body .btn-set-complete-Project {
+  grid-column: 11/13;
+}
+
+.project-form-body {
+  width: 96%;
+  padding-bottom: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #e3e3e3;
+}
+.project-form-body label {
+  padding-left: 20px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+.project-form-body .section-details {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.project-form-body .section-details > div {
+  width: 50%;
+}
+.project-form-body .section-details .section-image {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.project-form-body .section-details .section-image img {
+  width: 80%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 6px #aeaeae;
+}
+.project-form-body .section-details .section-image label {
+  background-color: red;
+}
+.project-form-body .section-details .section-project-details {
+  margin-bottom: 50px;
+  padding-top: 20px;
+}
+.project-form-body .section-details .section-project-details .form-group {
+  margin-bottom: 18px;
+}
+.project-form-body .section-details .section-project-details .form-group label {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.project-form-body .section-details .section-project-details .form-group input, .project-form-body .section-details .section-project-details .form-group select {
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #d7d7d7;
+  font-size: 0.95em;
+  color: #5b5b5b;
+}
+.project-form-body .section-details .section-project-details .period-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.project-form-body .section-details .section-project-details .period-selector label {
+  width: 100%;
+}
+.project-form-body .section-details .section-project-details .period-selector p {
+  width: 25%;
+  text-align: center;
+}
+.project-form-body .section-details .section-project-details .period-selector input {
+  width: 20%;
+}
+.project-form-body .section-description {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.project-form-body .section-description textarea {
+  border-radius: 5px;
+  width: 95%;
+  height: 300px;
+  margin-left: 20px;
+}
+.project-form-body textarea {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.section-skill {
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.section-skill .skill-input-area {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.section-skill .skill-input-area input {
+  width: 200px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+  padding-left: 5px;
+  border: 1px solid grey;
+}
+.section-skill .skill-input-area button {
+  background-color: red;
+  padding: 8px 9px;
+  color: white;
+  border-radius: 5px;
+}
+.section-skill .skill-lister {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.section-skill .skill-lister p {
+  margin: 0px 5px;
+  background-color: #f36363;
+  border-radius: 15px;
+  padding: 2px 5px 2px 10px;
+  color: white;
+}
+.section-skill .skill-lister p:hover {
+  background-color: #bf4545;
+}
+.section-skill .skill-lister p span {
+  cursor: pointer;
+  opacity: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  background-color: red;
+  border-radius: 8px;
+  line-height: 17px;
+  text-align: center;
+  transition: all 200ms linear;
+}
+.section-skill .skill-lister p span:hover {
+  opacity: 1;
+  transition: all 200ms linear;
+}
+
+.contractor-display {
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.content-body .contractor-display {
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+}
+.content-body .contractor-display > .contractorCard {
+  margin: 10px;
+}
+
+.contractor-job-display {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.contractor-job-display .img-display {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.contractor-job-display .img-display img {
+  border-radius: 5px;
+  box-shadow: 0 0 6px grey;
+}
+.contractor-job-display .user-details {
+  width: calc(100% - 300px);
+  padding: 10px;
+}
+.contractor-job-display .user-details .user-details-holder {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.contractor-job-display .user-details .user-details-holder h3 {
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+.contractor-job-display .user-details .user-details-holder p {
+  font-size: 1.3em;
+  color: #4a4a4a;
+}
+
+.user-skill-display {
+  width: 100%;
+  padding: 20px;
+}
+.user-skill-display h4 {
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: red;
+}
+.user-skill-display .user-skill-set-display {
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+}
+.user-skill-display .user-skill-set-display p {
+  background-color: #e05252;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 .dashboard-main-section {

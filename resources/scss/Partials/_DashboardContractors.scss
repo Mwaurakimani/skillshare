@@ -1,0 +1,76 @@
+.contractor-display {
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.content-body {
+    .contractor-display {
+        display: flex;
+        align-self: flex-start;
+        flex-wrap: wrap;
+
+        & > .contractorCard {
+            margin: 10px;
+
+        }
+    }
+}
+
+.contractor-job-display {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+
+    .img-display {
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        img{
+            border-radius: 5px;
+            box-shadow: 0 0 6px grey;
+        }
+    }
+
+    .user-details {
+        width: calc(100% - 300px);
+        padding: 10px;
+        .user-details-holder{
+            width: 100%;
+            height: 60px;
+            margin-bottom: 10px;
+            h3{
+                font-size: 1.5em;
+                text-decoration: underline;
+            }
+            p{
+                font-size: 1.3em;
+                color: #4a4a4a;
+            }
+        }
+    }
+}
+.user-skill-display{
+    width: 100%;
+    padding: 20px;
+    h4{
+        font-size: 1.3em;
+        font-weight: bolder;
+        color: red;
+    }
+    .user-skill-set-display{
+        width: 100%;
+        padding: 5px;
+        background-color: white;
+        p{
+            background-color: #e05252;
+            color: white;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+    }
+}
