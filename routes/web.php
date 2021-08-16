@@ -1,10 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\userController;
-use App\Models\Project;
-=======
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-=======
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
 Route::get('/', function () {
     return view('home');
 });
@@ -33,7 +25,6 @@ Route::get('/dashboard', function () {
     return view('App.client.home');
 })->middleware(['auth'])->name('dashboard');
 
-<<<<<<< HEAD
 Route::resource('/User', userController::class);
 
 
@@ -82,6 +73,3 @@ Route::get('/project/{id}' , function ($id){
 
 require __DIR__.'/auth.php';
 
-=======
-require __DIR__.'/auth.php';
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2

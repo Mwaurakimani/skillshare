@@ -21,21 +21,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/res/live.js') }}" defer></script>
-<<<<<<< HEAD
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-=======
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
 </head>
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100">
 
     <div class="dashboard-main-section">
-<<<<<<< HEAD
-        <x-side-Navigation>
-        </x-side-Navigation>
-=======
->>>>>>> 4bd199ac2787eaadf46a1e77d0a8787a3f6148e2
         @yield('content')
     </div>
 
