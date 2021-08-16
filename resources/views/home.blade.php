@@ -10,7 +10,7 @@
                 <img src=" {{ asset('storage/logo.png') }} " alt="">
             </div>
             <section class="log_in_section">
-                <h3>Welcome to Kenya's number 1 <br> contractors market place</h3>
+                <h3>Welcome to Kenya's number 1 <br> contractors/clients one stop site.</h3>
                 @if(Auth::user() == null)
                 @endif
                 <div class="login_button_holder">
@@ -23,7 +23,7 @@
                 </div>
             </section>
             <section class="description_section">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, laborum ducimus. Natus quae, veniam est cum eveniet exercitationem delectus. Non itaque voluptate libero. Accusantium culpa ullam ut incidunt, molestias pariatur.
+                <p>
                 </p>
             </section>
         </div>
