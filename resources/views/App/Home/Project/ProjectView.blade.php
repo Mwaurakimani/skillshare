@@ -46,9 +46,9 @@
                     @endforeach
                 </div>
             </div>
-{{--            {{ dd($Application) }}--}}
-            @if(Auth::check())
-                @if(Auth::user()->role == 'Contractor' && count($Application) > 0)
+            {{--            {{ dd($Application) }}--}}
+            @if(Auth::check() && Auth::user()->role == 'Contractor')
+                @if(count($Application) > 0)
                     @if($Application[0]->assigned == 0)
                         <div class="call-to-action">
                             <p>Project not yet assigned</p>
@@ -65,7 +65,6 @@
                         </button>
                     </div>
                 @endif
-            @else
             @endif
         </div>
         <script>
@@ -86,8 +85,8 @@
                     url: '/applyForJob',
                     dataType: 'json',
                     data: {
-                        "user_id" : user_id,
-                        "project_id" : project_id
+                        "user_id": user_id,
+                        "project_id": project_id
                     },
                     success: (msg) => {
                         alert(msg.stmt);

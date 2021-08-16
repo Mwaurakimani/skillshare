@@ -1,0 +1,74 @@
+.skill-display{
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 0 6px grey;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    .table-display{
+        width: 40%;
+        height: 100%;
+        overflow: auto;
+        padding: 3px;
+        thead{
+            th:nth-child(1){
+                width: 8%;
+            }
+            th:nth-child(2){
+                width: 30%;
+            }
+            th:nth-child(3){
+                width: calc(100% - 38%);
+            }
+        }
+
+        tbody{
+            tr{
+                cursor: pointer;
+                &:hover{
+                    background-color: #535353;
+                    color: white;
+                }
+            }
+        }
+        p{
+            width: 100%;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+    }
+    .form-display{
+        width: 60%;
+        height: 100%;
+        background-color: #dddddd;
+        overflow: auto;
+        form{
+            padding: 20px;
+            .form-group{
+                margin-bottom: 20px;
+                lable{
+                    display: block;
+                }
+                textarea,input{
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+            .button_dispay{
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    padding: 5px 15px;
+                    background-color: red;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

@@ -15,6 +15,11 @@
         <img src=" {{ asset($name[1]) }} " alt="">
         <p>{{ $name[0] }}</p>
     </a>
+@elseif(Auth::user()->role == 'Admin')
+    <a href="/Admin/{{$name[0]}}" class="{{ $located ? 'active-panel' : ""  }}">
+        <img src=" {{ asset($name[1]) }} " alt="">
+        <p>{{ $name[0] }}</p>
+    </a>
 @else
     <a href="/{{$name[0]}}" class="{{ $located ? 'active-panel' : ""  }}">
         <img src=" {{ asset($name[1]) }} " alt="">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class userController extends Controller
 {
@@ -30,7 +31,7 @@ class userController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +42,7 @@ class userController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -52,7 +53,7 @@ class userController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -63,8 +64,8 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -72,7 +73,7 @@ class userController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'paymentMethode' => 'required' ,
+            'paymentMethode' => 'required',
         ]);
 
         $user = User::find($id);
@@ -90,17 +91,30 @@ class userController extends Controller
 
         $request->session()->flash('message', 'User Was Updated Successfully');
 
-        return redirect('/account');
+        if ($id == Auth::user()->id) {
+            return redirect('/account');
+        } else{
+            return redirect()->back();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         return $id;
+    }
+
+    public function viewContractor($id)
+    {
+        $user = User::find($id);
+
+        return view('App.Home.Contractor.contractorForm')->with([
+            'user' => $user
+        ]);
     }
 }

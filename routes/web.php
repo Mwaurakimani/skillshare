@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Application;
+use App\Http\Controllers\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,13 @@ use App\Models\Application;
 Route::get('/dashboard', function () {
     $user = Auth::user();
     $role = $user->role;
+
     if ($role == 'Client') {
         return view('App.client.Account');
     } elseif ($role == 'Contractor') {
         return view('App.Contractor.home');
     } elseif ($role == 'Admin') {
-        return redirect()->route('/');
+        return view('App.Admin.home');
     } else {
         return redirect()->route('/');
     }
@@ -55,7 +57,7 @@ Route::get('/account', function () {
             ]
         );
     } elseif ($role == 'Admin') {
-        return redirect()->route('/');
+        return view('App.Admin.Account');
     } else {
         return redirect()->route('/');
     }
@@ -76,6 +78,7 @@ Route::get('/Contractor', function () {
         'contractors' => $contractors
     ]);
 })->middleware(['auth'])->name('account');
+Route::get('/Home/contractor/{id}', [userController::class,'viewContractor'])->middleware(['auth'])->name('account');
 
 Route::get('/Contractor/{id}', function (User $user, $id) {
 
@@ -108,6 +111,18 @@ Route::get('/Contractor/{id}', function (User $user, $id) {
             'applications' => $applications
         ]);
 })->middleware(['auth'])->name('account');
+
+Route::get('/Skills', function () {
+    $skills = Skill::all();
+
+    return view('App.Contractor.Skill.index')->with([
+        'skills' => $skills
+    ]);
+})->middleware(['auth'])->name('skills');
+
+Route::post('/getSkill',[SkillController::class,'getSkill']);
+
+Route::post('/addNewSkill',[SkillController::class,'store']);
 
 
 Route::post('/Contractor/hire', function (Request $request) {
@@ -391,6 +406,9 @@ Route::post('/filterContractor',function (Request $request){
 
 //home routes
 require __DIR__ . '/home.php';
+
+//home routes
+require __DIR__ . '/AdminRoutes.php';
 
 //tests routes
 require __DIR__ . '/tester.php';

@@ -57,7 +57,13 @@
             <div class="user-skill-display">
                 <h4>Skill Set</h4>
                 <div class="user-skill-set-display">
-                    <p>Architecture</p>
+                    @php
+                    $skills = $user->Skill;
+                    @endphp
+
+                    @foreach($skills as $skill)
+                        <p>{{ $skill->name }}</p>
+                    @endforeach
                 </div>
             </div>
             <div class="projects_display">
@@ -103,7 +109,8 @@
                     'user_id': user_id,
                 },
                 success: function (data) {
-                    alert('Hired Successfuly')
+                    alert('Hired Successfully')
+                    window.location.reload();
                 },
                 error: function (data){
                     console.log(data);
@@ -126,7 +133,8 @@
                     'user_id': user_id,
                 },
                 success: function (data) {
-                    alert('Hired Successfuly')
+                    alert('Fired Successfully')
+                    window.location.reload();
                 },
                 error: function (data){
                     console.log(data);

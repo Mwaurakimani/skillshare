@@ -68,7 +68,7 @@
             <div class="project_card_panel card_display_panel">
                 @if(!is_null($contractors))
                     @foreach($contractors as $contractor)
-                        <x-Cards.contractorCard :contractor="$contractor" :anchor="__('value')">
+                        <x-Cards.contractorCard :contractor="$contractor" :anchor="__('/Home/contractor')">
 
                         </x-Cards.contractorCard>
                     @endforeach

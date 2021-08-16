@@ -9,6 +9,7 @@
 //dashboard
 @import "components/Dashboard/navigationSection";
 @import "components/Dashboard/panelBar";
+@import "components/Dashboard/usersTable";
 
 //cards
 @import "components/Cards/projectCard";
@@ -22,6 +23,7 @@
 
 //homepage
 @import "Partials/index";
+@import "Partials/HomeContractor";
 
 //dashboard
 @import "Partials/Dashboard";
@@ -29,6 +31,7 @@
 @import "Partials/DashboardAccount";
 @import "Partials/DashboardProject";
 @import "Partials/DashboardContractors";
+@import "Partials/DashboardSkill";
 
 .dashboard-main-section {
     width: 100vw;

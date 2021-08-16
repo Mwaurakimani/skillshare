@@ -236,6 +236,19 @@ div > div .user_card_holder .view_button a {
   border-radius: 5px;
 }
 
+.Accounts-table {
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 6px grey;
+}
+.Accounts-table tbody tr:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
 .project_card_holder {
   width: 100%;
   display: grid;
@@ -879,6 +892,63 @@ body > h3 {
   flex-wrap: wrap;
 }
 
+.Contractor-view {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+  box-shadow: 0 0 6px grey;
+}
+.Contractor-view .user_details {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+}
+.Contractor-view .user_details .image-viewer {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 20px;
+}
+.Contractor-view .user_details .info-group {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.Contractor-view .user_details .info-group h4 {
+  font-size: 1.5em;
+}
+.Contractor-view .user_details .info-group p {
+  font-size: 1.3em;
+  color: #535353;
+}
+.Contractor-view .account_details {
+  width: 50%;
+  height: 100%;
+  background-color: #c6c6c6;
+}
+.Contractor-view .account_details h5 {
+  font-size: 1.8em;
+  padding: 20px;
+  text-decoration: underline;
+}
+.Contractor-view .account_details .info-group {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.Contractor-view .account_details .info-group h4 {
+  font-size: 1.5em;
+}
+.Contractor-view .account_details .info-group .skill-set-display {
+  width: 100%;
+  padding: 10px;
+}
+
 .dashboard-main-section {
   width: 100vw;
   height: 100vh;
@@ -1256,6 +1326,76 @@ body > h3 {
   display: inline-block;
   padding: 5px 10px;
   border-radius: 20px;
+}
+
+.skill-display {
+  width: 100%;
+  height: 500px;
+  box-shadow: 0 0 6px grey;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 5px;
+}
+.skill-display .table-display {
+  width: 40%;
+  height: 100%;
+  overflow: auto;
+  padding: 3px;
+}
+.skill-display .table-display thead th:nth-child(1) {
+  width: 8%;
+}
+.skill-display .table-display thead th:nth-child(2) {
+  width: 30%;
+}
+.skill-display .table-display thead th:nth-child(3) {
+  width: calc(100% - 38%);
+}
+.skill-display .table-display tbody tr {
+  cursor: pointer;
+}
+.skill-display .table-display tbody tr:hover {
+  background-color: #535353;
+  color: white;
+}
+.skill-display .table-display p {
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+.skill-display .form-display {
+  width: 60%;
+  height: 100%;
+  background-color: #dddddd;
+  overflow: auto;
+}
+.skill-display .form-display form {
+  padding: 20px;
+}
+.skill-display .form-display form .form-group {
+  margin-bottom: 20px;
+}
+.skill-display .form-display form .form-group lable {
+  display: block;
+}
+.skill-display .form-display form .form-group textarea, .skill-display .form-display form .form-group input {
+  width: 100%;
+  border-radius: 5px;
+}
+.skill-display .form-display form .button_dispay {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.skill-display .form-display form .button_dispay button {
+  padding: 5px 15px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
 }
 
 .dashboard-main-section {

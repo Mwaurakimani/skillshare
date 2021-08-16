@@ -149,7 +149,7 @@ if(!isset($project)){
                 <div class="section-skill">
                     <label for="Description">Skill Set Required</label>
                     <div class="skill-input-area">
-                        <input list="skills" id="skill_input_selector">
+                        <input list="skills" id="skill_input_selector" autocomplete="off">
                         <datalist id="skills">
                             <option value="Architecture">
                             <option value="Construction Engineer">

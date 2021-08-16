@@ -27,6 +27,8 @@ Route::get('/Contractors', function () {
 });
 Route::resource('/contractor', ContractorController::class)->middleware(['auth']);
 
+Route::resource('/Skill', \App\Http\Controllers\SkillController::class)->middleware(['auth']);
+
 
 
 //Projects

@@ -59,4 +59,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Skill::class)
             ->as('setSkill');
     }
+
+    public function Project()
+    {
+        return $this->hasMany(Application::class);
+    }
 }

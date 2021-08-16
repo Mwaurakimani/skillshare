@@ -2,17 +2,24 @@
 
     if(Auth::user()->role == 'Client'){
         $btns = [
-        ['account','storage/account.png'],
-        ['project','storage/icons8-project-60.png'],
-        ['Contractor','storage/workers.png']
-    ];
-
+            ['account','storage/account.png'],
+            ['project','storage/icons8-project-60.png'],
+            ['Contractor','storage/workers.png'],
+            ['Skills','storage/skill.png']
+        ];
+    } elseif (Auth::user()->role == 'Admin') {
+                $btns = [
+                    ['Accounts','storage/account.png'],
+                    ['Projects','storage/icons8-project-60.png'],
+                    ['Contractors','storage/workers.png'],
+                    ['Skills','storage/skill.png']
+                ];
     }else{
         $btns = [
-        ['dashboard','storage/menu.png'],
-        ['account','storage/account.png'],
-        ['project','storage/icons8-project-60.png'],
-    ];
+            ['dashboard','storage/menu.png'],
+            ['account','storage/account.png'],
+            ['project','storage/icons8-project-60.png'],
+        ];
 
     }
 

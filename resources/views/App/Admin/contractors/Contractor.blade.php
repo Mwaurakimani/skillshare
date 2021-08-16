@@ -29,8 +29,10 @@
                 </div>
             @endif
             <div class="contractor-display">
-                @if($contractors != null)
-                @foreach($contractors as $contractor)
+                @if($Contractors != null)
+                @foreach($Contractors as $contractor)
+
+
                 <x-Cards.contractorCard :contractor="$contractor" :anchor="__('/Contractor')">
 
                 </x-Cards.contractorCard>
