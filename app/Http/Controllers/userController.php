@@ -82,7 +82,11 @@ class userController extends Controller
         $user->email = $request->email;
         $user->paymentMethode = $request->paymentMethode;
         $user->visibility = $request->visibility;
-        $user->status = $request->status;
+
+        if (Auth::user()->role == 'Admin') {
+            $user->status = $request->status;
+        }
+        
         $user->location = $request->location;
         $user->Bio = $request->Bio;
 
@@ -93,7 +97,7 @@ class userController extends Controller
 
         if ($id == Auth::user()->id) {
             return redirect('/account');
-        } else{
+        } else {
             return redirect()->back();
         }
     }
