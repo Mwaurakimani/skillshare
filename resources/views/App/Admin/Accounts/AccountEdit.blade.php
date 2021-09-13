@@ -71,8 +71,9 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Status</label>
                             <select name="status" id="">
-                                <option value="Active" {{ $user->status == 'Active' ? 'selected="selected"' : "" }}>Active</option>
-                                <option value="Inactive" {{ $user->status == 'Inactive' ? 'selected="selected"' : "" }} >Inactive</option>
+                                <option value="Active" {{ Auth::User()->status == 'Active' ? 'selected="selected"' : "" }}>Active</option>
+                                <option value="Inactive" {{ Auth::User()->status == 'Inactive' ? 'selected="selected"' : "" }} >Inactive</option>
+                                <option value="Blacklisted" {{ Auth::User()->status == 'Blacklisted' ? 'selected="selected"' : "" }} >Blacklisted</option>
                             </select>
                         </div>
                     </div>

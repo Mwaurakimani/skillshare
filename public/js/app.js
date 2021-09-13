@@ -3902,7 +3902,7 @@ $('#add_skill_to_project').on('click', function (e) {
 
   $.ajax({
     type: 'POST',
-    url: '/addSkill',
+    url: '/addSkillToProject',
     dataType: 'json',
     data: {
       skill_name: skill_name,

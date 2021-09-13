@@ -3,22 +3,22 @@
 @section('content')
     <h3>Projects</h3>
     <div class="content_body">
-        <div class="filter_section">
-            <div class="filter_panel">
-                <div class="filter_input_group">
-                    <h5>Category</h5>
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="filter_input_group">
-                    <h5>Location</h5>
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+{{--        <div class="filter_section">--}}
+{{--            <div class="filter_panel">--}}
+{{--                <div class="filter_input_group">--}}
+{{--                    <h5>Category</h5>--}}
+{{--                    <select name="" id="">--}}
+{{--                        <option value="">All</option>--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--                <div class="filter_input_group">--}}
+{{--                    <h5>Location</h5>--}}
+{{--                    <select name="" id="">--}}
+{{--                        <option value="">All</option>--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="items_section">
             <div class="nav_panel">
                 {{--            <div class="filter_display">--}}
@@ -27,8 +27,35 @@
                 {{--                <p title="Remove">Architect <span>X</span> </p>--}}
                 {{--            </div>--}}
                 <div class="search_bar">
-                    <input type="text" placeholder="Type to search...">
+                    <input id="project_search" type="text" placeholder="Type to search..." onkeyup="search_project()">
                 </div>
+                <script>
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    function search_project(){
+                        txt = $(event.currentTarget).val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/getProjects',
+                            dataType: 'json',
+                            data: {
+                                txt: txt
+                            },
+                            success: (msg) => {
+                                console.log(msg);
+                            },
+                            error: (xhr) => {
+                                console.log(xhr.responseJSON);
+                            }
+                        });
+
+                    }
+                </script>
             </div>
             <div class="project_card_panel card_display_panel">
                 @if(!is_null($projects))

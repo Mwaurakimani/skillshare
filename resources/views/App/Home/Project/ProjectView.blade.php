@@ -6,7 +6,7 @@
         <div class="project-view">
             <div class="image-viewer">
                 @if(isset($project->image))
-                    <img src="{{ asset('storage/ProjectImages/20210728100331.png') }}" alt="">
+                    <img src="{{ $project->image ? asset("storage/ProjectImages/".$project->image) : asset("storage/ProjectImages/20210728100331.png")}}" alt="">
                 @else
                     <img src="{{asset('storage/default_project_image.png')}}" alt="">
                 @endif

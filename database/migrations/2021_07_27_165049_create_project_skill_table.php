@@ -15,9 +15,17 @@ class CreateProjectSkillTable extends Migration
     {
         Schema::create('project_skill', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('project_id');
-            $table->bigInteger('skill_id');
+            $table->unsignedBigInteger('project_id')->nullable();
+            $table->unsignedBigInteger('skill_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('project_id')->references('id')->on('projects')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
+//            $table->foreign('skill_id')->references('id')->on('skills');
+////                ->onUpdate('cascade')
+////                ->onDelete('set null');
+
         });
     }
 

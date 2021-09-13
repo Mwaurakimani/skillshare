@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 use App\Models\User;
 
 class AdminController extends Controller
 {
-    /*
-     * Accounts Section
-     * */
     public function Accounts_show()
     {
         $users = User::all();
@@ -29,11 +27,6 @@ class AdminController extends Controller
         ]);
     }
 
-
-    /*
-     * Projects Section
-     * */
-
     public function Projects_show()
     {
         $projects = Project::all();
@@ -50,5 +43,10 @@ class AdminController extends Controller
         return view('App.Admin.contractors.Contractor')->with([
             'Contractors' => $contractors
         ]);
+    }
+
+    public function Skills_show()
+    {
+        return redirect('/Skills');
     }
 }

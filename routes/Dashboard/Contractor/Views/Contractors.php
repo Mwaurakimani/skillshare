@@ -1,63 +1,26 @@
 <?php
 
-use App\Models\User;
-use App\Models\Project;
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContractorController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Application;
-
-
-Route::get('/', function () {
-    $contractors = User::where('role','=','Contractor')->with('Skill')->get();
-
-    return view('home')->with([
-        'contractors'=>$contractors
-    ]);
-});
-
-//Contractors
-Route::get('/Contractors', function () {
-    $contractors = User::where('role', 'Contractor')->get();
-
-    return view('App.Home.Contractors')->with([
-        'contractors' => $contractors,
-    ]);
-});
-Route::resource('/contractor', ContractorController::class)->middleware(['auth']);
-
-Route::resource('/Skill', \App\Http\Controllers\SkillController::class)->middleware(['auth']);
+use App\Models\Project;
 
 
 
-//Projects
-Route::get('/Projects', function () {
-    $projects = Project::all();
-
-    return view('App.Home.Project.Project')->with([
-        'projects' => $projects,
-    ]);
-});
-Route::resource('project',ProjectController::class)->middleware(['auth']);
+Route::get('/contractor/project', [ContractorController::class,'get_projects_applied_for'])->middleware(['auth'])->name('account');
 
 
-//Projects/id
-Route::get('/Projects/{id}', function ($id) {
-    $project = Project::where('id', $id)->with('Skill')->get();
-    $skills = $project[0]['Skill'];
-    $application = Application::where('user_id',Auth::user()->id)
-        ->where('project_id',$id)
-        ->get();
+Route::get('/Home/contractor/{id}', [userController::class,'viewContractor'])->middleware(['auth'])->name('account');
 
-    return view('App.Home.Project.ProjectView')->with([
-        'project' => $project[0],
-        'skills' => $skills,
-        'Application' => $application
-    ]);
-})->middleware(['auth']);
+Route::get('/Contractor/{id}', [ContractorController::class,'get_contractor_with_applications'])->middleware(['auth'])->name('account');
 
-//apply for job
+Route::post('/Contractor/hire', [ContractorController::class,'hire_contractor'])->middleware(['auth'])->name('account');
+
+Route::post('/Contractor/fire', [ContractorController::class,'fire_contractor'])->middleware(['auth'])->name('account');
+
+
+
 Route::post('/applyForJob', function (Request $request) {
     $response = false;
     $stmt = "";
@@ -132,4 +95,14 @@ Route::post('/applyForJob', function (Request $request) {
 });
 
 
+Route::get('/Contractors', function () {
+    $contractors = User::where('role', 'Contractor')->get();
 
+    return view('App.Home.Contractors')->with([
+        'contractors' => $contractors,
+    ]);
+});
+
+Route::get('/Contractor', [ContractorController::class,'get_all_contractor_with_Application'])->middleware(['auth'])->name('account');
+
+Route::resource('/contractor', ContractorController::class)->middleware(['auth']);

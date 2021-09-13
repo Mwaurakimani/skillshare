@@ -11,12 +11,10 @@
                 $btns = [
                     ['Accounts','storage/account.png'],
                     ['Projects','storage/icons8-project-60.png'],
-                    ['Contractors','storage/workers.png'],
                     ['Skills','storage/skill.png']
                 ];
     }else{
         $btns = [
-            ['dashboard','storage/menu.png'],
             ['account','storage/account.png'],
             ['project','storage/icons8-project-60.png'],
         ];

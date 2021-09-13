@@ -1,6 +1,18 @@
 @extends('layouts.fontEnd')
 @php
-use App\Models\Project;
+    use App\Models\Project;
+    $projects = $user->Project->where('assigned','1');
+
+    $project_ids = array();
+    foreach ($projects as $project){
+        array_push($project_ids,$project->id);
+    }
+    $completed_projects = array();
+    foreach ($project_ids as $project_id){
+        $project = Project::where('id',$project_id)->where('complete',1)->get();
+        array_push($completed_projects,$project);
+    }
+
 @endphp
 
 @section('content')
@@ -9,7 +21,7 @@ use App\Models\Project;
         <div class="Contractor-view">
             <div class="user_details">
                 <div class="image-viewer">
-                    <img src="{{ asset('storage/ProjectImages/20210728100331.png') }}" alt="">
+                    <img src="https://picsum.photos/300" alt="">
                 </div>
                 <div class="info-group">
                     <h4>Email</h4>
@@ -34,7 +46,7 @@ use App\Models\Project;
                     <h4>Skills</h4>
                     <div class="skill-set-display">
                         @php
-                        $skills = $user->Skill;
+                            $skills = $user->Skill;
                         @endphp
 
                         @forelse($skills as $skill)
@@ -47,17 +59,13 @@ use App\Models\Project;
                     </div>
                 </div>
                 <div class="info-group">
-                    <h4>On going Projects</h4>
-{{--                    @php--}}
-{{--                    $projects = count($projects);--}}
-{{--                    @endphp--}}
-{{--                    <h4>: {{ $projects }}</h4>--}}
+                    <h4>User ID</h4>
+                    <h4>: {{ $user->id }}</h4>
                 </div>
                 <div class="info-group">
                     <h4>Applied Jobs</h4>
                     @php
                         $projects = count($user->Project);
-
                     @endphp
                     <h4>: {{ $projects }}</h4>
                 </div>
@@ -70,19 +78,29 @@ use App\Models\Project;
                 </div>
                 <div class="info-group">
                     <h4>Completed Jobs</h4>
-                    @php
-                        $projects = count($user->Project->where('assigned','1'));
-
-                    @endphp
-                    <h4>: {{ $projects }}</h4>
+                    @if(count($completed_projects) > 0)
+                        <h4>: {{ count($completed_projects[0]) }}</h4>
+                    @endif
                 </div>
                 <div class="info-group">
                     <h4>Average Rating</h4>
                     @php
-                        $projects = count($user->Project->where('assigned','1'));
+                        $user->rating = 0;
+                        $app_count = 0;
+                        $applications = \App\Models\Application::where('user_id',$user->id)->where('Rating','!=','null')->get();
+                        if(count($applications) >0 ){
+                            $app_count = count($applications);
+                            $counter = intval(0);
+                            foreach ($applications as $application){
+                                $rating = $application->Rating;
 
+                                $counter = $counter + intval($rating);
+                            }
+
+                            $user->rating =  intval($counter/$app_count);
+                        }
                     @endphp
-                    <h4>: {{ $projects }}</h4>
+                    <h4>: {{ $user->rating }}</h4>
                 </div>
 
             </div>

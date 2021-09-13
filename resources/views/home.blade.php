@@ -1,5 +1,14 @@
 @extends('layouts.fontEnd')
 
+@php
+    $categories = null;
+
+    $categories = \App\Models\Skill::all();
+    $location = \App\Models\User::select('location')->groupBy('location')->get();
+
+
+@endphp
+
 @section('content')
     <div class="home_banner">
         <div class="banner_overlay">
@@ -38,29 +47,33 @@
                     <h5>Category</h5>
                     <select name="Category" id="category_select" onchange="filter_contractorCard()">
                         <option value="All">All</option>
-                        <option value="1">Architecture</option>
-                        <option value="2">Road Engineer</option>
-                        <option value="3">Bridge Engineer</option>
+                        @if(isset($categories) && count($categories) > 0)
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
                 <div class="filter_input_group">
                     <h5>Location</h5>
                     <select name="Location" id="location_select" onchange="filter_contractorCard()">
                         <option value="All">All</option>
-                        <option value="Nairobi">Nairobi</option>
-                        <option value="Kiambu">Kiambu</option>
-                        <option value="Coast">Coast</option>
+                        @if(isset($location) && count($location) > 0)
+                            @foreach($location as $loc)
+                                <option value="{{$loc->location}}">{{$loc->location}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
             </div>
         </div>
         <div class="items_section">
             <div class="nav_panel">
-                            <div class="filter_display">
-                                <h6>Filters :</h6>
-                                <p title="Remove">None <span>X</span> </p>
-                                <p title="Remove">Architect <span>X</span> </p>
-                            </div>
+{{--                <div class="filter_display">--}}
+{{--                    <h6>Filters :</h6>--}}
+{{--                    <p title="Remove">None <span>X</span></p>--}}
+{{--                    <p title="Remove">Architect <span>X</span></p>--}}
+{{--                </div>--}}
                 <div class="search_bar">
                     <input type="text" placeholder="Type to search...">
                 </div>
@@ -84,7 +97,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            window.filter_contractorCard = () =>{
+            window.filter_contractorCard = () => {
                 let category = $('#category_select').val();
                 let Location = $('#location_select').val();
 
@@ -93,8 +106,8 @@
                     url: '/filterContractor',
                     dataType: 'json',
                     data: {
-                        'Category':category,
-                        'Location':Location
+                        'Category': category,
+                        'Location': Location
                     },
                     success: function (data) {
                         // console.log(data);

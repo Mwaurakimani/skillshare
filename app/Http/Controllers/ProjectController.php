@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $projects = Project::where('user_id',Auth::user()->id)->get();
@@ -30,22 +25,11 @@ class ProjectController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('App.client.Project.ProjectView');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         request()->validate([
@@ -77,12 +61,6 @@ class ProjectController extends Controller
         return redirect('/project/' . $project->id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $project = Project::where('id', $id)->with('Skill')->get();
@@ -97,24 +75,6 @@ class ProjectController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Project $project)
-    {
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Project $project)
     {
         request()->validate([
@@ -143,12 +103,6 @@ class ProjectController extends Controller
         return redirect('/project/' . $project->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Project $project)
     {
         $applications = Application::where('project_id',$project->id)->get();
@@ -184,5 +138,73 @@ class ProjectController extends Controller
     public function remove_image($image)
     {
         Storage::disk('local')->delete('/public/ProjectImages/'.$image);
+    }
+
+    public function set_project_as_complete(Request $request)
+    {
+        $project = Project::find($request->project_id);
+
+        $project->complete = 1;
+
+        $project->save();
+
+        return array(
+            'data' => true
+        );
+    }
+
+    public function rate_project(Request $request)
+    {
+        $project_id = $request->project_id;
+        $rating = $request->rating;
+
+        $applications = Application::where('project_id',$project_id)->get();
+
+        if(count($applications) > 0 ){
+            foreach ($applications as $application){
+                $application->Rating = $rating;
+                $application->save();
+            }
+        }
+
+        $resp = array(
+            'message' => $applications
+        );
+
+        return $resp;
+    }
+
+    public function get_project_by_id($id ,Request $request)
+    {
+        $project = Project::where('id', $id)->with('Skill')->get();
+        $skills = $project[0]['Skill'];
+        $application = Application::where('user_id',Auth::user()->id)
+            ->where('project_id',$id)
+            ->get();
+
+        return view('App.Home.Project.ProjectView')->with([
+            'project' => $project[0],
+            'skills' => $skills,
+            'Application' => $application
+        ]);
+    }
+
+    public function get_all_projects(){
+        $projects = Project::all();
+
+        return view('App.Home.Project.Project')->with([
+            'projects' => $projects,
+        ]);
+    }
+
+    public function searchProject(Request $request){
+        $txt = $request->txt;
+
+        $projects = Project::where("title",'LIKE', "%{$txt}%")->get();
+
+        $view = view('components.Forms.skill-form')
+            ->render();
+
+        return $view;
     }
 }

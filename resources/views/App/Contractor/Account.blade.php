@@ -67,13 +67,7 @@
                                 <option value="false" {{ Auth::User()->visibility == 0 ? 'selected="selected"' : "" }} >false</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Status</label>
-                            <select name="status" id="">
-                                <option value="Active" {{ Auth::User()->status == 'Active' ? 'selected="selected"' : "" }}>Active</option>
-                                <option value="Inactive" {{ Auth::User()->status == 'Inactive' ? 'selected="selected"' : "" }} >Inactive</option>
-                            </select>
-                        </div>
+
                     </div>
                 </div>
 

@@ -3,28 +3,28 @@
 @section('content')
     <h3>Professionals</h3>
     <div class="content_body">
-        <div class="filter_section">
-            <div class="filter_panel">
-                <div class="filter_input_group">
-                    <h5>Category</h5>
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="filter_input_group">
-                    <h5>Rating</h5>
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="filter_input_group">
-                    <h5>Location</h5>
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+{{--        <div class="filter_section">--}}
+{{--            <div class="filter_panel">--}}
+{{--                <div class="filter_input_group">--}}
+{{--                    <h5>Category</h5>--}}
+{{--                    <select name="" id="">--}}
+{{--                        <option value="">All</option>--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--                <div class="filter_input_group">--}}
+{{--                    <h5>Rating</h5>--}}
+{{--                    <select name="" id="">--}}
+{{--                        <option value="">All</option>--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--                <div class="filter_input_group">--}}
+{{--                    <h5>Location</h5>--}}
+{{--                    <select name="" id="">--}}
+{{--                        <option value="">All</option>--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="items_section">
             <div class="nav_panel">
                 {{--            <div class="filter_display">--}}
@@ -39,7 +39,7 @@
             <div class="project_card_panel card_display_panel">
                 @if(!is_null($contractors))
                     @foreach($contractors as $contractor)
-                        <x-Cards.contractorCard :contractor="$contractor" :anchor="__('/Home/contractor')">
+                        <x-Cards.contractorCard  :contractor="$contractor" :anchor="__('/Home/contractor')">
 
                         </x-Cards.contractorCard>
                     @endforeach
